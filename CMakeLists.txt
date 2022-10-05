@@ -5,8 +5,10 @@ set(CMAKE_CXX_STANDARD 14)
 
 add_executable(helloworld main.cpp)
 
-set(wxWidgets_ROOT_DIR E:\\sdk\\wxWidgets-3.2.1)
-set(wxWidgets_LIB_DIR E:\\Dwonloads\\wxWidgets-3.2.1\\lib\\gcc810_dll)
+if(CMAKE_SYSTEM_NAME STREQUAL "Windows")
+    set(wxWidgets_ROOT_DIR E:\\sdk\\wxWidgets-3.2.1)
+    set(wxWidgets_LIB_DIR E:\\sdk\\wxWidgets-3.2.1\\lib\\gcc810_dll)
+endif()
 find_package(wxWidgets REQUIRED gl core base OPTIONAL_COMPONENTS net)
 
 
